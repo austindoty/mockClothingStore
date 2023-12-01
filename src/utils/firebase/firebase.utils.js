@@ -7,6 +7,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
+  onAuthStateChanged,
 } from "firebase/auth";
 import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
 
@@ -16,7 +17,7 @@ const firebaseConfig = {
   projectId: "crwn-clothing-db-6e680",
   storageBucket: "crwn-clothing-db-6e680.appspot.com",
   messagingSenderId: "1087486492086",
-  appId: "1:1087486492086:web:b8101b556e5c19ad31d517"
+  appId: "1:1087486492086:web:b8101b556e5c19ad31d517",
 };
 
 const firebaseApp = initializeApp(firebaseConfig);
@@ -77,3 +78,6 @@ export const signInAuthUserWithEmailAndPassword = async (email, password) => {
 };
 
 export const signOutUser = async () => await signOut(auth);
+
+export const onAuthStateChangedListener = (callback) =>
+  onAuthStateChanged(auth, callback);
