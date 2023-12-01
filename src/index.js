@@ -3,7 +3,8 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 
 import App from "./App";
-import { UserProvider } from "./components/context/user-context";
+import { UserProvider } from "./context/user-context";
+import { ProductsProvider } from "./context/products.context"
 
 import reportWebVitals from "./reportWebVitals";
 import "./index.scss";
@@ -13,7 +14,9 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <UserProvider>
+        <ProductsProvider>
         <App />
+        </ProductsProvider>
       </UserProvider>
     </BrowserRouter>
   </React.StrictMode>

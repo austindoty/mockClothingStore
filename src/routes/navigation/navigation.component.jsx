@@ -1,7 +1,7 @@
 import { Fragment, useContext } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 
-import { UserContext } from '../../components/context/user-context';
+import { UserContext } from '../../context/user-context';
 
 import { ReactComponent as CrwnLogo } from '../../assests/crown.svg';
 import { signOutUser } from '../../utils/firebase/firebase.utils';
