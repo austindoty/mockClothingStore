@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 import CartIcon from "../../components/cart-icon/cart-icon.component";
 import CartDropdown from "../../components/cart-dropdown/cart-dropdown.component";
 
-import { UserContext } from "../../context/user-context";
+import { UserContext } from "../../context/user.context";
 import { CartContext } from "../../context/cart.context";
 
 import { ReactComponent as CrwnLogo } from "../../assets/crown.svg";
