@@ -21,12 +21,12 @@ import {
 } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyACI395Jw6OlZVBv1HN7htS1E8C4TDevns",
-  authDomain: "crwn-clothing-db-6e680.firebaseapp.com",
-  projectId: "crwn-clothing-db-6e680",
-  storageBucket: "crwn-clothing-db-6e680.appspot.com",
-  messagingSenderId: "1087486492086",
-  appId: "1:1087486492086:web:b8101b556e5c19ad31d517",
+  apiKey: "AIzaSyDDU4V-_QV3M8GyhC9SVieRTDM4dbiT0Yk",
+  authDomain: "crwn-clothing-db-98d4d.firebaseapp.com",
+  projectId: "crwn-clothing-db-98d4d",
+  storageBucket: "crwn-clothing-db-98d4d.appspot.com",
+  messagingSenderId: "626766232035",
+  appId: "1:626766232035:web:506621582dab103a4d08d6",
 };
 
 const firebaseApp = initializeApp(firebaseConfig);
@@ -47,7 +47,8 @@ export const db = getFirestore();
 
 export const addCollectionAndDocuments = async (
   collectionKey,
-  objectsToAdd
+  objectsToAdd,
+  field
 ) => {
   const collectionRef = collection(db, collectionKey);
   const batch = writeBatch(db);
@@ -56,6 +57,7 @@ export const addCollectionAndDocuments = async (
     const docRef = doc(collectionRef, object.title.toLowerCase());
     batch.set(docRef, object);
   });
+
   await batch.commit();
   console.log("done");
 };
@@ -70,6 +72,7 @@ export const getCategoriesAndDocuments = async () => {
     acc[title.toLowerCase()] = items;
     return acc;
   }, {});
+
   return categoryMap;
 };
 
